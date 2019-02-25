@@ -1,5 +1,6 @@
 // require config
 
+
 // Menu button
 .menu-btn {
 	position: absolute;
@@ -64,7 +65,7 @@
 		@include easeOut;
 		margin: 0;
 		padding: 0;
-		background: rgba(darken($primary-color, 5), 0.9);
+		background: rgba(darken($primary-color, 5), $overlay-opacity);
 		list-style: none;
 		transform: translate(0, -100%);
 		
@@ -75,7 +76,7 @@
 
 	&-branding {
 		@include easeOut;
-		background: rgba($primary-color, 0.9);
+		background: rgba($primary-color, $overlay-opacity);
 		transform: translate(0, 100%);
 
 		&.show {
@@ -84,11 +85,14 @@
 
 		.portrait {
 			width: 250px;
+			min-height: 250px;
 			height: 250px;
-			background: url('../img/portrait.jpg');
+			min-width: 250px;
+			background: url('../img/portrait.jpg') no-repeat;
 			border-radius: 50%;
 			border: solid 3px $secondary-color;
 			background-size: contain;
+			
 		}
 	}
 
@@ -129,3 +133,4 @@
 		transition-delay: $x * 0.1s;
 	}
 }
+
